@@ -1,5 +1,7 @@
 # test-map
 
+.env.development => 카카오 지도 키 입력
+
 ## Project setup
 ```
 npm install
