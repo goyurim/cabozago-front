@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-
+import Login from "@/components/Login"
 import Map from "@/components/Map"
 import Sliding from "@/components/Sliding"
 
@@ -10,6 +10,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/map',
     name: 'Map',
     component: Map
   },

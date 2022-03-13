@@ -7,8 +7,10 @@
 
 
     <input type="button" v-on:click="btnAll" id="buttonAll" class="active" value="전체 닫기">
-    <input type="button" v-on:click="btnCal" id="buttonCal" value="캘린더">
-    <input type="button" v-on:click="btnList" id="buttonList" value="북마크">
+    <button type="button" v-on:click="btnCal" id="buttonCal" class="active sideBtn"><img id="calendarImg" src="../assets/calendar.png" alt="calendar image"></button>
+    <button type="button" v-on:click="btnList" id="buttonList" class="active sideBtn"><img id="bookmarkImg" src="../assets/bookmark.png" alt="calendar image"></button>
+    <!-- <input type="button" v-on:click="btnCal" id="buttonCal" value="캘린더"> -->
+    <!-- <input type="button" v-on:click="btnList" id="buttonList" value="북마크"> -->
     
     
      
@@ -454,23 +456,48 @@ components:{
 
 
 /*전체화면 */
-#buttonAll {position:absolute;top:50px;left:5px;padding:7px 12px;font-size:14px;border: 1px solid #dbdbdb;
-background-color: #fff;border-radius: 2px;box-shadow: 0 1px 1px rgba(0,0,0,.04);z-index:100;cursor:pointer;
+#buttonAll {
+  position:absolute;
+  top:50px;left:5px;
+  width: 72px;
+  height: 30px;
+  font-size:12px;
+  font-weight: bold;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.04);
+  z-index:100;
+  cursor:pointer;
 }
 
 #buttonAll.active {background-color:#eee; background-position:0 -350px;}
-
-/*캘린더 */
-#buttonCal {position:absolute;top:50px;right:5px;padding:7px 12px;font-size:14px;border: 1px solid #dbdbdb;
-background-color: #fff;border-radius: 2px;box-shadow: 0 1px 1px rgba(0,0,0,.04);z-index:100;cursor:pointer;
+/* 캘린더, 북마크 */
+.sideBtn {
+  position:absolute;
+  width: 48px;
+  height: 32px;
+  font-size:14px;
+  border: 0px solid #dbdbdb;
+  background-color: #fff;
+  border-radius: 16px 0px 0px 16px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.04);
+  z-index:100;
+  cursor:pointer;
 }
 
-#buttonCal.active {background-color:#eee; background-position:0 -350px;}
+/*캘린더 */
+#buttonCal {
+  top:50px; 
+  right: 0px;
+}
+
+/* #buttonCal.active {background-color:#eee; background-position:0 -350px;} */
 
 /*북마크 */
-#buttonList {position:absolute;top:90px;right:5px;padding:7px 12px;font-size:14px;border: 1px solid #dbdbdb;
-background-color: #fff;border-radius: 2px;box-shadow: 0 1px 1px rgba(0,0,0,.04);z-index:100;cursor:pointer;
-/* background: url("../assets/logo.png"); */
+#buttonList {
+  top:100px;
+  right:0px;
 }
 
 /* #checkBox{
@@ -479,7 +506,13 @@ background: url(https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/im
 } */
 
 
-#buttonList.active {background-color:#eee; background-position:0 -350px;}
+/* #buttonList.active {background-color:#eee; background-position:0 -350px;} */
+
+#calendarImg, #bookmarkImg {
+  width: 18px;
+  height: 18px;
+}
+
 
 
 #searchBar{
@@ -614,6 +647,7 @@ background: url(https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/im
     left: 0;
     z-index: 10;
 }
+
 
 
 </style>
