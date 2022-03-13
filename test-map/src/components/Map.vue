@@ -7,10 +7,10 @@
 
 
     <input type="button" v-on:click="btnAll" id="buttonAll" class="active" value="전체 닫기">
-    <button type="button" v-on:click="btnCal" id="buttonCal" class="active sideBtn"><img id="calendarImg" src="../assets/calendar.png" alt="calendar image"></button>
-    <button type="button" v-on:click="btnList" id="buttonList" class="active sideBtn"><img id="bookmarkImg" src="../assets/bookmark.png" alt="calendar image"></button>
-    <!-- <input type="button" v-on:click="btnCal" id="buttonCal" value="캘린더"> -->
-    <!-- <input type="button" v-on:click="btnList" id="buttonList" value="북마크"> -->
+    <button type="button" v-on:click="btnCal" id="buttonCal" class="sideBtn"><img id="calendarImg" src="../assets/calendar.png" alt="calendar image"></button>
+    <button type="button" v-on:click="btnList" id="buttonList" class="sideBtn"><img id="bookmarkImg" src="../assets/bookmark.png" alt="calendar image"></button>
+    <!-- <input type="button" v-on:click="btnCal" id="buttonCal" class="sideBtn" value="캘린더">
+    <input type="button" v-on:click="btnList" id="buttonList" class="sideBtn" value="북마크"> -->
     
     
      
@@ -37,8 +37,6 @@
     
     </div>
 
-   
-      
   <!-- #1 : 전체 리스트 Window -->
     
     
@@ -166,12 +164,12 @@ components:{
         var control = document.getElementById('buttonCal');
         // 버튼이 눌린 상태가 아니면
     if (control.className.indexOf('active') === -1) {
-        control.className = 'active';
+        control.classList.add('active');
         this.cal_show = !this.cal_show;
         //console.log("캘린더 띄우기"+this.cal_show);
 
     } else {
-        control.className = '';
+        control.classList.remove('active');
         this.cal_show = !this.cal_show;
         //console.log("캘린더 닫기"+this.cal_show);
 
@@ -179,12 +177,7 @@ components:{
         console.log(elements1.value);
 
         var elements2 = document.getElementById("input-30");
-        console.log(elements2.value);
-
-        
-
-        
-
+        console.log(elements2.value);  
     }
 
     },
@@ -193,12 +186,12 @@ components:{
         var control = document.getElementById('buttonList');
         // 버튼이 눌린 상태가 아니면
     if (control.className.indexOf('active') === -1) {
-        control.className = 'active';
+        control.classList.add('active');
         this.bookMark_show = !this.bookMark_show;
         //console.log("전체 리스트 띄우기"+this.list_show);
 
     } else {
-        control.className = '';
+        control.classList.remove('active');
         this.bookMark_show = !this.bookMark_show;
         //console.log("북마크 열기"+this.list_show);
     }
@@ -486,13 +479,18 @@ components:{
   cursor:pointer;
 }
 
+#calendarImg, #bookmarkImg {
+  width: 18px;
+  height: 18px;
+}
+
 /*캘린더 */
 #buttonCal {
   top:50px; 
   right: 0px;
 }
 
-/* #buttonCal.active {background-color:#eee; background-position:0 -350px;} */
+#buttonCal.active {background-color:#eee; background-position:0 -350px;}
 
 /*북마크 */
 #buttonList {
@@ -506,12 +504,9 @@ background: url(https://t1.daumcdn.net/localimg/localimages/07/2018/pc/common/im
 } */
 
 
-/* #buttonList.active {background-color:#eee; background-position:0 -350px;} */
+#buttonList.active {background-color:#eee; background-position:0 -350px;}
 
-#calendarImg, #bookmarkImg {
-  width: 18px;
-  height: 18px;
-}
+
 
 
 
